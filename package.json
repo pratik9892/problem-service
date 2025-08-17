@@ -1,0 +1,11 @@
+{
+  "name": "problem-service",
+  "version": "1.0.0",
+  "description": "These service to add, delete, read and update problems",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
