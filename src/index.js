@@ -5,7 +5,6 @@ const apiRouter = require("./routes/index.js")
 const BaseError = require("./errors/baseError.js")
 const errorHandler = require("./utils/errorHandler.js")
 const connectToDB = require("./config/db.config.js")
-const { default: mongoose } = require("mongoose")
 
 const app = express()
 

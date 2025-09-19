@@ -1,0 +1,34 @@
+const ProblemRepository = require("../repositories")
+const { markdownSantizer } = require("../utils")
+
+class ProblemService{
+    constructor(ProblemRepository){
+        this.ProblemRepository = ProblemRepository
+    }
+
+    async createProblem(problemData){
+       try {
+             //santize the markdown for problem description
+        problemData.description = markdownSantizer(problemData.description)
+
+        const problem = await this.ProblemRepository.createProblem(problemData)
+
+        return problem;
+       } catch (error) {
+            console.log(error)
+            throw error;
+       }
+    }
+
+    async getAllProblems(){
+        try {
+            const problems = await this.ProblemRepository.getAllProblems()
+            return problems
+        } catch (error) {
+            console.log(error)
+            throw error
+        }
+    }
+}
+
+module.exports = ProblemService
