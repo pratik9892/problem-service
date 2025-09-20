@@ -27,8 +27,18 @@ async function addProblem(req,res,next){
     }
 }
 
-async function getProblem(req,res){
-   
+async function getProblem(req,res,next){
+   try {
+    const problem = await problemService.getProblem(req.params.id)
+    return res.status(StatusCodes.OK).json({
+        success : true,
+        message : "Fetched a problem successfully",
+        error : {},
+        data : problem
+    })
+   } catch(error) {
+        next(error);
+   }
 }
 
 async function getAllProblems(req,res){
