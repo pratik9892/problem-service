@@ -8,7 +8,7 @@ problemRouter.get("/ping" , problemController.pingProblemController)
 problemRouter.get("/:id" , problemController.getProblem)
 problemRouter.get("/" , problemController.getAllProblems)
 problemRouter.post("/" , problemController.addProblem);
-problemRouter.delete("/id" , problemController.deleteProblem)
+problemRouter.delete("/:id" , problemController.deleteProblem)
 problemRouter.patch("/:id",problemController.updateProblems)
 
 module.exports = problemRouter;

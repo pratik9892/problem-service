@@ -23,8 +23,6 @@ class NotFound extends BaseError { // Correctly extends BaseError
     }
 }
 
-console.log('NotFound BaseError prototype:', Object.getPrototypeOf(NotFound));
-
 
 module.exports = NotFound
 
